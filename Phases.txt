@@ -1,0 +1,89 @@
+A customer interacts with an e-commerce website, adds items to the shopping cart, and initiates the checkout process. 
+The system calls the inventory service to check product availability, calculates the total order cost, and processes the payment.
+ 
+Microservice1: We can access the endpoints to use the services like:
+               add_product
+               update_product
+               delete_product 
+               list_products
+               get_quantity
+               get_price
+
+Mircroservice2: Here we will have a landing page that will ask for product ID and product quantity, 
+                then it will hit(after clicking the calculate price button) the endpoint i.e calculate_price
+                and will give the result after communicating with microservice1.                
+              
+-----------------------------------------------------------------------------
+
+Project Phases:
+ 
+Phase 1: Building microservices 
+ 
+   Task: 
+                               Build the microservices for the scenario provided to you. 
+                               Containerize each microservice using Docker.
+      
+ 
+Phase 2: Dockerizing the microservices
+                               
+   Task: 
+                               Participants will create Dockerfiles for different microservices.
+       Build Docker images and push them to DockerHub.
+ 
+ 
+Phase 3: Infrastructure provisioning.
+ 
+   Task:                  
+                               Using Terraform create the network stack and ec2 instances 
+                               Modify the terraform configuration to build auto scalability group to automatically scale
+ 
+Phase 4: Serverless - Automatically stop ec2 instance.
+   Task:                  
+                               Lambda to automatically stop the instance everyday at 6pm.
+                              
+Phase 5: Kubernetes       orchestration
+               Task: 
+                               Install kubernetes using kubeadm 
+                               Deploy microservices as Pods
+                                               define Deployments for scalability and rolling updates.
+                                               establish communication between microservices using cluster IP.
+                               Create HPA for horizontal scalability
+ 
+Phase 6: Secure the Kubernetes cluster.
+ 
+   Task: 
+      Implement Role-Based Access Control (RBAC) for fine-grained access.
+       Define network policies to control communication between pods.
+ 
+ 
+Phase 7: Monitoring using Prometheus and 
+   Task: Set up monitoring using Prometheus and Grafana.
+       Monitor key metrics of microservices.
+       Create dashboards for visualization.
+ 
+Phase 8: 
+   Task: Implement a Jenkins pipeline for CI/CD.
+       Automate the CI/CD pipeline for microservices.
+                                               CID should 
+                                                               download code from git
+                                                               build using maven 
+                                                               static analysis using Sonar 
+                                                                               upload result to sonar server 
+                                                               Run dummy unit test 
+                                                               Dockerize the application 
+                                                               Create a docker container 
+                                                               Push image to docker repository
+                                                               Deploy to kubernetes cluster 
+       Trigger deployments based on code changes.
+ 
+Phase 9: Configuration management 
+   Task: Implement configuration management with Ansible.
+       Setup ansible playbook to do deployment.
+ 
+Phase 10: APM using Dynatrace 
+   Task: 
+                               Implement infrastructure monitoring and application monitoring using dynatrace
+ 
+Phase 11: Destroy cluster 
+               Task: 
+                               Destroy the cluster using Terraform
